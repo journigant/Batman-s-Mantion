@@ -48,7 +48,7 @@ public class Game
         batCave = new Room("in the BatCave");
         garage = new Room("in the garage");
         
-        // initialise room exits
+        // initialise room exits and creates items in the rooms
         entranceHall.setExit( "west", study );
         entranceHall.setExit( "east", masterBedroom );
         entranceHall.setExit( "down", batCave );
