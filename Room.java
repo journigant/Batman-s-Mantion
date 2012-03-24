@@ -104,8 +104,18 @@ public class Room
         if(this.getExit("west") != null) {
             System.out.print("west ");
         }
+        if(this.getExit("up") != null) {
+            System.out.print("up ");
+        }
+        if(this.getExit("down") != null) {
+            System.out.print("down ");
+        }
+        if(this.getExit("closet") != null) {
+            System.out.print("closet ");
+        }
         System.out.println();
     }
+
     public void addItems(String Name, String Description, int Weight){
         Item theItem= new Item( Name, Description, Weight);
         items.put(theItem.getName(), theItem);
@@ -114,4 +124,16 @@ public class Room
        items.remove(itemName);
     }
 
+      /**
+     * @return a long Description of the room in the form: You are in the "room". Your Exits are : "".
+     */
+     public String getLongDescription() {
+       return "You are in the" + description. + ".\n" 
+       for ( Item item: items){
+       "You have an" + item.getName(). + ".\n" 
+       } this.describeExits();
+         
+       
+
+     }   
 }
