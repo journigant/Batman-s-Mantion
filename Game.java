@@ -180,7 +180,7 @@ public class Game
         else {
             currentRoom = nextRoom;
             System.out.println("You are " + currentRoom.getDescription());
-            describeRoom();
+            System.out.println(currentRoom.getLongDescription());
             P1.setRoom(currentRoom);
         }
     }
