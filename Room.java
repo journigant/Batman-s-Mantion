@@ -42,18 +42,6 @@ public class Room
     /**
      * Define the exits of this room.  Every direction either leads
      * to another room or is null (no exit there).
-     */
-    public void setExits(Room north, Room east, Room south, Room west) 
-    {
-        if(north != null)
-            northExit = north;
-        if(east != null)
-            eastExit = east;
-        if(south != null)
-            southExit = south;
-        if(west != null)
-            westExit = west;
-    }
     /*
     *available exits for a particular room
     */
