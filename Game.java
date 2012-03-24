@@ -70,7 +70,9 @@ public class Game
         batCave.setExit( "east", garage );
         garage.setExit( "west", batCave );
         
-        currentRoom = entranceHall;  // start game outside
+        currentRoom = entranceHall;
+        Player P1 = new Player("P1", 50);
+        P1.setRoom(currentRoom);// start game outside
     }
 
     /**
@@ -179,6 +181,7 @@ public class Game
             currentRoom = nextRoom;
             System.out.println("You are " + currentRoom.getDescription());
             describeRoom();
+            P1.setRoom(currentRoom);
         }
     }
 
