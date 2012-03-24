@@ -140,7 +140,12 @@ public class Game
         else if (commandWord.equals("quit")) {
             wantToQuit = quit(command);
         }
-
+        else if (commandWord.equals("drop")){
+            dropItem(command);
+        }
+        else if (commandWord.equals("take")){
+            takeItem(command);
+        }
         return wantToQuit;
     }
 
@@ -157,7 +162,7 @@ public class Game
         System.out.println("around at the Mansion.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        System.out.println("   go quit help take drop");
     }
     
     /** 
@@ -189,6 +194,43 @@ public class Game
         }
         //If exit is available, the player's room becomes the room the player
         //instructed to go to
+    }
+    
+    private void takeItem(Command command)
+    {
+        if(!command.hasSecondWord()){
+            //if there is no second word, we need to clarify what to take...
+            System.out.println("Take what?");
+            return;
+        }
+        String item = command.getSecondWord();
+        for(Item item: items){
+            if (currentRoom.contains item){
+            P1.pickUp item;
+            currentRoom.remove item;
+            }
+            else{
+                System.out.println("I don't see that item here.")
+            }
+        }
+    }
+    
+    private void dropItem(Command command)
+    {
+        if(!command.hasSecondWord()){
+            //We need a second word to clarify what the player wants to drop
+            System.out.println("Drop what?")
+        }
+        String item = command.getSecondWord();
+        for(Item item: items){
+            if (P1.contains item){
+                currentRoom.add item;
+                P1.drop item;
+            else{
+                System.out.println("I don't have that item.")
+            }
+            }
+        }
     }
 
     /** 
