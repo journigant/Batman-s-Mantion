@@ -37,26 +37,40 @@ public class Game
         Room study, entrance, masterBedroom, masterCloset, lab, batCave, garage;
       
         // create the rooms
-        study = new Room("in the study");
-        entrance = new Room("in the entrance");
-        masterBedroom = new Room("in the master bedroom");
+        study = new Room("outside the main entrance of the university");
+        studyCloset = new Room("inside the study room closet");
+        entranceHall = new Room("in a lecture theater");
+        masterBedroom = new Room("in the campus pub");
         masterCloset = new Room("in the master closet");
-        lab = new Room("in a science lab");
-        batCave = new Room("in the bat cave");
+        masterBathroom = new Room("in a computing lab");
+        lab = new Room("in the lab");
+        labCloset = new Room("inside the lab room closet");
+        batCave = new Room("in the BatCave");
         garage = new Room("in the garage");
         
         // initialise room exits
-        entrance.setExits("west", study);
-        entrance.setExits("east", masterBedroom);
-        entrance.setExits("down", batCave);
-        study.setExits("east", entrance);
-        study.setExits("down", lab);
-        masterBedroom.setExits("west" , entrance);
-        masterBedroom.setExits("closet" , masterCloset);
-        masterCloset.setExits("west" ,masterCloset);
-       //finish this
-
-        currentRoom =study ;  // start game outside
+        entranceHall.setExit( "west", study );
+        entranceHall.setExit( "east", masterBedroom );
+        entranceHall.setExit( "down", batCave );
+        masterBedroom.setExit( "east", masterBathroom );
+        masterBedroom.setExit( "closet", masterCloset );
+        masterCloset.setExit( "west", masterBedroom );
+        masterBedroom.setExit( "west", entranceHall );
+        masterBathroom.setExit( "west", masterBedroom );
+        study.setExit( "down", lab );
+        study.setExit( "east", entranceHall );
+        study.setExit( "closet", studyCloset );
+        studyCloset.setExit( "east", study );
+        lab.setExit( "up", study );
+        lab.setExit( "east", batCave );
+        lab.setExit( "closet", labCloset );
+        labCloset.setExit( "east", lab );
+        batCave.setExit( "up", entranceHall );
+        batCave.setExit( "west", lab );
+        batCave.setExit( "east", garage );
+        garage.setExit( "west", batCave );
+        
+        currentRoom = entranceHall;  // start game outside
     }
 
     /**
