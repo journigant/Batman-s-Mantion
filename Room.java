@@ -18,7 +18,7 @@ public class Room
 {
     public String description; 
     private HashMap<String, Room> exits;
-    private HashMap<String, Item> items;
+    private ArrayList<Item> items;
     private Room northExit;
     private Room southExit;
     private Room eastExit;
@@ -36,7 +36,7 @@ public class Room
     {
         this.description = description;
         exits = new HashMap<String, Room>();
-        items = new HashMap<String, Item>();
+        items = new ArrayList<Item>();
     }
 
     /**
@@ -45,7 +45,7 @@ public class Room
     /*
     *available exits for a particular room
     */
-    public void setExits(String direction, Room currentroom){
+    public void setExit(String direction, Room currentroom){
         exits.put(direction, currentroom);
     }
 
@@ -106,24 +106,49 @@ public class Room
 
     public void addItem(String Name, String Description, int Weight){
         Item theItem= new Item( Name, Description, Weight);
-        items.put(theItem.getName(), theItem);
+        items.add(theItem);
     }
     
     public void addItem(Item theItem){
-        items.put(theItem.getName(), theItem);
+        if (theItem != null){
+            items.add(theItem);
+        System.out.println(theItem.getName()+ " was added to room");
     }
-    public void removeItem(String itemName){
-       items.remove(itemName);
+}
+    public Item removeItem(String itemName){
+        Item currentItem = null; 
+        for(Item item: items){
+            if (item.getName().contains(itemName)){
+                currentItem = item; 
+                if (item.isCarriable){
+                System.out.println(item.getName() +" was removed from room");
+            }else if(!item.isCarriable){
+                System.out.println(item.getName() +"is to heavy to pick up!");
+                return null;
+                
+            }
+        }
     }
+        items.remove(currentItem);
+        if ( currentItem == null){
+            System.out.println("Item wasnt found");
+            return null;
+        }else{
+            return currentItem;
+        }
+       
+       
+    
+}
 
       /**
      * @return a long Description of the room in the form: You are in the "room". Your Exits are : "".
      */
-     public String getLongDescription() {
-       return "You are in the" + description. + ".\n" 
-       for ( Item item: items){
-       "You have an" + item.getName(). + ".\n" 
-       } this.describeExits();
+     public void getLongDescription() {
+       for(Item item: items){
+           System.out.println("There is a " + item.getDescription() + ".\n");
+        }   
+       this.describeExits();
          
        
 

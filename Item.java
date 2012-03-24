@@ -12,7 +12,7 @@ public class Item
     private int weight;
     private String name;
     private String description; 
-    private boolean isCarriable;
+    public boolean isCarriable;
 
     /**
      * Constructor for objects of class Item
@@ -56,8 +56,8 @@ public class Item
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public String getWeight()
+    public int getWeight()
     {        
-        return description;
+        return weight;
     }
 }

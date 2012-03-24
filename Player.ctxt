@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=Name\ Weight
+comment0.target=Player(java.lang.String,\ int)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Player\n
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment1.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
+comment2.params=
+comment2.target=int\ getMaximumWeight()
+comment3.params=
+comment3.target=Room\ getRoom()
+comment4.params=theItem
+comment4.target=Item\ getItem(java.lang.String)
+comment5.params=nextRoom
+comment5.target=void\ setRoom(Room)
+comment6.params=theItem
+comment6.target=void\ pickUpItem(Item)
+comment7.params=theItem
+comment7.target=Item\ dropItem(java.lang.String)
+numComments=8
