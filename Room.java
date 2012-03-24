@@ -116,11 +116,15 @@ public class Room
         System.out.println();
     }
 
-    public void addItems(String Name, String Description, int Weight){
+    public void addItem(String Name, String Description, int Weight){
         Item theItem= new Item( Name, Description, Weight);
         items.put(theItem.getName(), theItem);
     }
-    public void removeItems(String itemName){
+    
+    public void addItem(Item theItem){
+        items.put(theItem.getName(), theItem);
+    }
+    public void removeItem(String itemName){
        items.remove(itemName);
     }
 
