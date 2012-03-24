@@ -34,7 +34,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room study, entrance, masterBedroom, masterCloset, lab, batCave, garage;
       
         // create the rooms
         study = new Room("in the study");
@@ -48,18 +48,15 @@ public class Game
         // initialise room exits
         entrance.setExits("west", study);
         entrance.setExits("east", masterBedroom);
-        entrance.setExits("down", batcave);
+        entrance.setExits("down", batCave);
         study.setExits("east", entrance);
         study.setExits("down", lab);
         masterBedroom.setExits("west" , entrance);
         masterBedroom.setExits("closet" , masterCloset);
-        mastercloset.setExits("west" ,masterCloset);
-        pub.setExits("east", outside);
-        lab.setExits("north", outside);
-        lab.setExits("east", office);
-        office.setExits("west", lab);
+        masterCloset.setExits("west" ,masterCloset);
+       //finish this
 
-        currentRoom = outside;  // start game outside
+        currentRoom =study ;  // start game outside
     }
 
     /**
