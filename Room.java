@@ -1,8 +1,8 @@
 /**
  * Class Room - a room in an adventure game.
  *
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * This class is part of the "World of Gotham" application. 
+ * "World of Gotham" is a very awesome, text based adventure game.  
  *
  * A "Room" represents one location in the scenery of the game.  It is 
  * connected to other rooms via exits.  The exits are labelled north, 
@@ -26,8 +26,10 @@ public class Room
 
     /**
      * Create a room described "description". Initially, it has
-     * no exits. "description" is something like "a kitchen" or
-     * "an open court yard".
+     * no exits. "description" is something like "Entrance Hall" or
+     * "Master Bedroom".
+     * Within those rooms there are exits and items, interactive objects a player may
+     * carry with them to another room.
      * @param description The room's description.
      */
     public Room(String description) 
@@ -40,10 +42,6 @@ public class Room
     /**
      * Define the exits of this room.  Every direction either leads
      * to another room or is null (no exit there).
-     * @param north The north exit.
-     * @param east The east east.
-     * @param south The south exit.
-     * @param west The west exit.
      */
     public void setExits(Room north, Room east, Room south, Room west) 
     {
@@ -56,6 +54,9 @@ public class Room
         if(west != null)
             westExit = west;
     }
+    /*
+    *available exits for a particular room
+    */
     public void setExits(String direction, Room currentroom){
         exits.put(direction, currentroom);
     }
