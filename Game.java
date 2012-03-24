@@ -72,7 +72,10 @@ public class Game
         
         currentRoom = entranceHall;
         Player P1 = new Player("P1", 50);
-        P1.setRoom(currentRoom);// start game outside
+        P1.setRoom(currentRoom);
+        /*
+        *Creates the Player and places them in the Entrance Hall of Batman's Mansion
+        */
     }
 
     /**
@@ -90,7 +93,7 @@ public class Game
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Thank you for playing.  Until next time...");
     }
 
     /**
@@ -99,8 +102,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to the World of Gotham!");
+        System.out.println("World of Gotham is a new, incredibly awesome adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
         System.out.println("You are " + currentRoom.getDescription());        
@@ -110,6 +113,7 @@ public class Game
     private void describeRoom(){
         System.out.println();
         currentRoom.describeExits();
+        //Describes the Room
     }
     
     /**
@@ -144,13 +148,13 @@ public class Game
 
     /**
      * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
+     * Here we print some awesome, cryptic message and a list of the 
      * command words.
      */
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around at the Mansion.");
         System.out.println();
         System.out.println("Your command words are:");
         System.out.println("   go quit help");
@@ -183,6 +187,8 @@ public class Game
             describeRoom();
             P1.setRoom(currentRoom);
         }
+        //If exit is available, the player's room becomes the room the player
+        //instructed to go to
     }
 
     /** 
