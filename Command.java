@@ -1,6 +1,6 @@
 /**
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * This class is part of the "World of Gotham" application. 
+ * "World of Gotham" is a very simple, text based adventure game.  
  *
  * This class holds information about a command that was issued by the user.
  * A command currently consists of two strings: a command word and a second
